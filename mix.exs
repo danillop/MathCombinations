@@ -7,7 +7,21 @@ defmodule MathCombinations.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description(),
+     package: package(),
      deps: deps()]
+  end
+
+  defp description do
+    """
+      A helper library with functions of Mathematics Combinations
+    """
+  end
+
+  defp package do
+    [licenses: ["MIT License"],
+     maintainers: ["M Danillo Pereira"],
+     links: %{"GitHub" => "https://github.com/danillop/MathCombinations"}]
   end
 
   # Configuration for the OTP application
@@ -27,6 +41,6 @@ defmodule MathCombinations.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
 end
